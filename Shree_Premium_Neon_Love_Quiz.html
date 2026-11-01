@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d20">
+<title>For Shree 💗 | Love Quiz</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+:root{--bg:#080d20;--panel:#111b32;--panel2:#17243d;--pink:#ff168c;--pink2:#ff65ba;--text:#f8f3fb;--muted:#9ba8c1;--line:#263653;--gold:#ffd6a2}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -10%,#3d123d 0,transparent 42%),var(--bg);color:var(--text);font-family:Poppins,Arial,sans-serif;min-height:100vh;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.13;background-image:radial-gradient(#ff5db5 1px,transparent 1px);background-size:34px 34px}
+.wrap{width:min(100% - 30px,760px);margin:auto;padding:25px 0 55px;position:relative}
+.topbar{display:flex;align-items:center;justify-content:space-between;border:1px solid #293650;background:#0d162bdb;backdrop-filter:blur(12px);padding:12px 16px;border-radius:18px;box-shadow:0 8px 30px #0005}
+.brand{font-weight:800;letter-spacing:2px;font-size:13px}.brand span{color:var(--pink2)}.toptag{font:11px 'DM Mono';color:#ff9bd1;border:1px solid #76315e;padding:7px 10px;border-radius:20px}
+.hero{text-align:center;padding:44px 8px 30px}.eyebrow{font:11px 'DM Mono';letter-spacing:3px;color:#ff8bc9;text-transform:uppercase}.heart{font-size:44px;display:inline-block;margin:12px 0;filter:drop-shadow(0 0 15px #ff168c);animation:pulse 2s infinite}
+h1{font:800 clamp(34px,8vw,56px)/1.1 'Playfair Display',serif;margin:4px 0 12px}h1 .pink{color:#ff5db5;text-shadow:0 0 25px #ff168c66}.subtitle{color:#b5bfd2;font-size:13px;line-height:1.8;max-width:470px;margin:0 auto}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:25px 0}.stat{background:linear-gradient(145deg,#17243d,#10182c);border:1px solid #2b3a56;border-radius:16px;padding:14px 8px;text-align:center;box-shadow:inset 0 1px #ffffff09}.stat strong{display:block;color:#ff72bc;font:700 22px 'DM Mono'}.stat small{font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+.card{background:linear-gradient(145deg,#121d34f5,#0e172bfa);border:1px solid #2c3a57;border-radius:24px;padding:22px;box-shadow:0 20px 55px #0006,inset 0 1px #ffffff0b;position:relative;overflow:hidden}.card:before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:#ff168c12;filter:blur(35px);right:-80px;top:-90px;pointer-events:none}
+.section-label{font:10px 'DM Mono';letter-spacing:2px;color:#ff83c5;text-transform:uppercase}.progress-head{display:flex;justify-content:space-between;align-items:center;margin:0 0 10px;color:#aebbd0;font-size:11px}.progress{height:7px;background:#26334d;border-radius:20px;overflow:hidden;margin-bottom:24px}.bar{height:100%;width:0;background:linear-gradient(90deg,#ff168c,#ff8ecb);border-radius:20px;box-shadow:0 0 14px #ff168c;transition:width .4s}
+.qnum{font:11px 'DM Mono';color:#ff8bc9;margin-bottom:12px}.question{font:700 clamp(19px,4.5vw,25px)/1.45 'Playfair Display',serif;margin:0 0 20px;max-width:600px}.answers{display:grid;gap:11px}.answer{display:flex;align-items:center;gap:13px;width:100%;text-align:left;padding:15px 14px;background:#17243a;border:1px solid #2b3b58;border-radius:15px;color:#e9edf7;font:500 13px/1.55 Poppins;cursor:pointer;transition:.2s}.answer:hover{border-color:#ff5db5;transform:translateY(-2px);box-shadow:0 5px 22px #ff168c20}.answer.selected{border-color:#ff4eaa;background:#351832;box-shadow:0 0 0 1px #ff4eaa44,0 0 22px #ff168c25}.letter{width:29px;height:29px;flex:0 0 29px;display:grid;place-items:center;border-radius:9px;background:#263650;color:#ff8bc9;font:600 12px 'DM Mono'}.answer.selected .letter{background:var(--pink);color:white}
+.controls{display:flex;gap:10px;margin-top:22px}.btn{border:0;border-radius:13px;padding:14px 20px;font:700 12px Poppins;letter-spacing:.5px;cursor:pointer;transition:.2s}.btn-primary{flex:1;color:white;background:linear-gradient(100deg,#f00083,#ff4eb0);box-shadow:0 7px 24px #ff168c45}.btn-primary:disabled{opacity:.35;cursor:not-allowed;box-shadow:none}.btn-ghost{color:#c3cce0;background:#202d45;border:1px solid #35435f}.btn:active{transform:scale(.98)}
+.note{text-align:center;color:#7887a3;font:10px 'DM Mono';line-height:1.8;margin:18px 8px 0}.result{text-align:center;padding:12px 4px 4px}.result .bigheart{font-size:55px;filter:drop-shadow(0 0 18px #ff168c)}.score{font:800 56px 'Playfair Display';color:#ff73bd;margin:10px}.result h2{font:700 27px 'Playfair Display';margin:5px}.result p{color:#b5bfd2;font-size:13px;line-height:1.8;max-width:480px;margin:10px auto 22px}.hidden{display:none!important}
+.footer{text-align:center;padding:28px 8px;color:#71809a;font:10px 'DM Mono';letter-spacing:1px}.footer span{color:#ff5db5}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.13)}}
+@media(max-width:480px){.wrap{width:min(100% - 22px,760px);padding-top:13px}.hero{padding:34px 5px 23px}.card{padding:18px 15px;border-radius:20px}.stats{gap:7px}.stat{padding:12px 5px}.stat strong{font-size:19px}.answer{padding:13px 11px;font-size:12px}.controls .btn{padding:13px 14px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="topbar"><div class="brand">B<span>♥</span>IKI &nbsp; LOVE STUDIO</div><div class="toptag">A LITTLE TEST OF US ✦</div></nav>
+  <header class="hero">
+    <div class="eyebrow">A PRIVATE LITTLE SURPRISE</div>
+    <div class="heart">💗</div>
+    <h1>How Well Do You<br><span class="pink">Know Love?</span></h1>
+    <p class="subtitle">Biki ki taraf se Shree ke liye ek pyara sa quiz. Har sawaal aur jawab Roman Hindi mein hai. Aaram se socho aur dil se jawab do.</p>
+    <div class="stats">
+      <div class="stat"><strong>15</strong><small>Questions</small></div>
+      <div class="stat"><strong>75</strong><small>Total points</small></div>
+      <div class="stat"><strong>53</strong><small>Pass points</small></div>
+    </div>
+  </header>
+  <main class="card" id="quizCard">
+    <div class="progress-head"><span class="section-label">THE LOVE QUIZ</span><span id="counter">01 / 15</span></div>
+    <div class="progress"><div class="bar" id="bar"></div></div>
+    <div id="quiz">
+      <div class="qnum" id="qnum">QUESTION 01</div>
+      <h2 class="question" id="question"></h2>
+      <div class="answers" id="answers"></div>
+      <div class="controls"><button class="btn btn-ghost" id="back" disabled>← ← BACK</button><button class="btn btn-primary" id="next" disabled>NEXT QUESTION →</button></div>
+      <div class="note">NO RUSH · BE HONEST · ANSWER FROM YOUR HEART</div>
+    </div>
+    <div class="result hidden" id="result">
+      <div class="bigheart">💖</div><div class="section-label">YOUR LOVE QUIZ RESULT</div>
+      <div class="score" id="score">0 / 75</div><h2 id="resultTitle">Beautiful effort, Shree!</h2>
+      <p id="resultText"></p>
+      <button class="btn btn-primary" id="restart">↻ TAKE THE QUIZ AGAIN</button>
+    </div>
+  </main>
+  <footer class="footer">MADE WITH <span>♥</span> BY BIKI FOR SHREE</footer>
+</div>
+<script>
+const questions=[{"q":"Jab do log ek dusre se pyar karte hain, lekin unki soch alag hoti hai, toh sabse zaroori kya hai?","qh":"","a":["Ek dusre ki baat samajhne ki koshish karna","Bahas jeetkar apni baat manwana","Chup rehna aur dusre ke sorry bolne ka wait karna"],"ah":["","",""],"s":0},{"q":"Agar tumhara partner kisi pareshani mein ho aur chup ho jaye, toh tum kya karogi?","qh":"","a":["Use thoda waqt dekar pyar se poochungi ki main kaise help kar sakti hoon","Baar baar poochungi jab tak woh sab kuch na bata de","Sochungi ki woh mujhse baat nahi karna chahta"],"ah":["","",""],"s":0},{"q":"Door rehkar bhi pyar ko mazboot banaye rakhne ke liye sabse zaroori kya hai?","qh":"","a":["Sachchai, bharosa aur ek dusre ke liye waqt nikalna","Poora din baat karna, lekin zaroori baaton se bachna","Ek dusre ka online status baar baar check karna"],"ah":["","",""],"s":0},{"q":"Agar koi purani galatfehmi phir se saamne aa jaye, toh sahi tareeka kya hoga?","qh":"","a":["Shaanti se baat karke use suljhana","Har purani galti yaad dilana","Dikhana ki kuch hua hi nahi, chahe mann mein baat ho"],"ah":["","",""],"s":0},{"q":"Agar tumhare partner ka koi bada sapna ho, toh tum kya karogi?","qh":"","a":["Uska hausla badhaungi aur uske sapne mein saath dungi","Umeed karungi ki woh mere liye apna sapna chhod de","Uski tarakki dekhkar insecure feel karungi"],"ah":["","",""],"s":0},{"q":"Agar tumhe jalan mehsoos ho, toh samajhdari se kya karogi?","qh":"","a":["Apni feeling samajhkar izzat se apni baat kahungi","Pehle ilzaam lagaungi, baad mein sawaal poochungi","Control karungi ki mera partner kis se baat kare"],"ah":["","",""],"s":0},{"q":"Sachche sorry ka matlab kya hota hai?","qh":"","a":["Apni galti maanna aur use sudharne ki koshish karna","Sirf baat khatam karne ke liye sorry bolna","Galti ka dosh halaat ya dusre insaan par daalna"],"ah":["","",""],"s":0},{"q":"Agar tumhare partner ko family, kaam ya padhai ke liye waqt chahiye, toh tum kya karogi?","qh":"","a":["Uski zimmedari samajhkar saath mein waqt plan karungi","Busy rehne ke liye use bura feel karwaungi","Use test karungi ki woh mujhe chunta hai ya nahi"],"ah":["","",""],"s":0},{"q":"Rishte mein bharose ki sabse achhi nishani kya hai?","qh":"","a":["Har waqt saboot maange bina bhi safe feel karna","Password share karna hi bharosa samajhna","Kabhi koi sawaal ya shak na hona"],"ah":["","",""],"s":0},{"q":"Agar tumhara partner apna darr ya kamzori bataye, toh tum kya karogi?","qh":"","a":["Bina judge kiye sunungi aur uski baat ko apne tak rakhungi","Baad mein jhagde ke waqt usi baat ka use karungi","Keh dungi ki woh faltu soch raha hai"],"ah":["","",""],"s":0},{"q":"Jab kisi se galti ho jaye, toh rishte mein kya hona chahiye?","qh":"","a":["Sach bolna, dukh samajhna aur milkar sudharna","Jhagda na ho isliye baat chhupana","Us galti ko baar baar taana banana"],"ah":["","",""],"s":0},{"q":"Future ka koi bada faisla dono ko kaise lena chahiye?","qh":"","a":["Apne sapne aur mushkilein batakar milkar faisla karna","Sirf ek insaan ka sab kuch decide karna","Baat serious hai isliye use taalte rehna"],"ah":["","",""],"s":0},{"q":"Ek dusre ko personal space dene ka kya matlab hai?","qh":"","a":["Apni pehchaan banaye rakhte hue pyar se jude rehna","Ek dusre se kam pyar karna","Jab mann ho tab ek dusre ko ignore karna"],"ah":["","",""],"s":0},{"q":"Mushkil waqt mein rishta mazboot kaise rehta hai?","qh":"","a":["Pyar, sabr aur chhoti chhoti baaton mein saath dena","Umeed karna ki romance har problem solve kar dega","Mushkil aate hi rishta chhod dena"],"ah":["","",""],"s":0},{"q":"Aakhir mein pyar ka sabse gehra matlab kya hai?","qh":"","a":["Har din izzat, sachchai aur parwah ko chunna","Bade bade waade karna, lekin roz koshish na karna","Kabhi bhi ek dusre se alag rai na hona"],"ah":["","",""],"s":0}];
+let current=0,answers=Array(questions.length).fill(null);
+const $=id=>document.getElementById(id);
+function render(){
+ const q=questions[current];$('counter').textContent='QUESTION '+String(current+1).padStart(2,'0')+' / 15';
+ $('qnum').textContent='QUESTION '+String(current+1).padStart(2,'0');
+ $('bar').style.width=((current)/15*100)+'%';$('question').textContent=q.q;
+ $('answers').innerHTML='';
+ q.a.forEach((choice,i)=>{const b=document.createElement('button');b.className='answer'+(answers[current]===i?' selected':'');b.innerHTML='<span class="letter">'+String.fromCharCode(65+i)+'</span><span></span>';b.querySelector('span:last-child').textContent=choice;b.onclick=()=>{answers[current]=i;render()};$('answers').appendChild(b)});
+ $('back').disabled=current===0;$('next').disabled=answers[current]===null;$('next').textContent=current===14?'SEE MY RESULT ✦':'NEXT QUESTION →';
+}
+$('back').onclick=()=>{if(current>0){current--;render()}};
+$('next').onclick=()=>{if(answers[current]===null)return;if(current<14){current++;render()}else showResult()};
+function showResult(){
+ const score=answers.reduce((sum,a)=>sum+(a===null?0:[5,2,0][a]),0);
+ $('quiz').classList.add('hidden');$('result').classList.remove('hidden');$('bar').style.width='100%';$('counter').textContent='COMPLETED';
+ $('score').textContent=score+' / 75';
+ let title,msg;
+ if(score>=53){title='A Heart Full of Understanding 💗';msg='Beautiful answers, Shree! Your choices show thoughtfulness and care. Keep choosing honesty, respect and teamwork every day.'}
+ else if(score>=35){title='A Lovely Start 🌷';msg='There is a lot of care in your answers. Every relationship keeps growing when two people listen, learn and understand each other.'}
+ else{title='Every Heart Keeps Learning ✨';msg='This quiz is only a little reflection, not a judgement. Love is something two people learn through honest conversations and everyday actions.'}
+ $('resultTitle').textContent=title;$('resultText').textContent=msg;
+}
+$('restart').onclick=()=>{current=0;answers=Array(15).fill(null);$('result').classList.add('hidden');$('quiz').classList.remove('hidden');render();};
+render();
+</script>
+</body>
+</html>
